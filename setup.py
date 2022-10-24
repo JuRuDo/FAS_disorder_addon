@@ -3,20 +3,20 @@
 #######################################################################
 # Copyright (C) 2022 Julian Dosch
 #
-# This file is part of Disorder_Wrapper.
+# This file is part of fas_disorder_addon.
 #
-#  Disorder_Wrapper is free software: you can redistribute it and/or modify
+#  fas_disorder_addon is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
 #
-#  Disorder_Wrapper is distributed in the hope that it will be useful,
+#  fas_disorder_addon is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with Disorder_Wrapper.  If not, see <http://www.gnu.org/licenses/>.
+#  along with fas_disorder_addon.  If not, see <http://www.gnu.org/licenses/>.
 #
 #######################################################################
 
@@ -27,8 +27,8 @@ with open("README.md", "r") as input:
     long_description = input.read()
 
 setup(
-    name="Disorder_Wrapper",
-    version="0.1",
+    name="FAS Disorder Addon",
+    version="1.0",
     python_requires='>=3.9.0',
     description="",
     long_description=long_description,
@@ -45,8 +45,8 @@ setup(
         'pathlib',
     ],
     entry_points={
-        'console_scripts': ["DisPred.predict = disorder_wrapper.predict_disorder:main",
-                            "DisPred.setup = disorder_wrapper.install_aucpred:main"
+        'console_scripts': ["fas.DisPred.predict = fas_disorder_addon.predict_disorder:main",
+                            "fas.DisPred.setup = fas_disorder_addon.install_aucpred:main"
                             ],
     },
     license="GPL-3.0",
