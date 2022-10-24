@@ -41,10 +41,12 @@ setup(
     install_requires=[
         'biopython',
         'tqdm',
-        'numpy'
+        'GitPython',
+        'pathlib',
     ],
     entry_points={
-        'console_scripts': ["DisPred.predict = disorder_wrapper.main.predict_disorder:main"
+        'console_scripts': ["DisPred.predict = disorder_wrapper.predict_disorder:main",
+                            "DisPred.setup = disorder_wrapper.install_aucpred:main"
                             ],
     },
     license="GPL-3.0",
