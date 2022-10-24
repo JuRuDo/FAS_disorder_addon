@@ -57,11 +57,6 @@ def compile_AUCpreD(path):
                         '\nPlease read instruction at %s and do it manually!' % auc_src)
     AUCDIR = 'export PATH=%s:$PATH\n' % path
     add_path(AUCDIR)
-    home = str(Path.home())
-    if platform == 'darwin':
-        os.system('. %s/.bash_profile' % home)
-    else:
-        os.system('. %s/.bashrc' % home)
 
 
 def add_path(path):
