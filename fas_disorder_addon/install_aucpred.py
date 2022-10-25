@@ -95,7 +95,7 @@ def main():
     optional.add_argument("-c", "--check", default=None, type=str, required=False,
                           help="Check if existing installation of PredictProperty is working.")
     args = parser.parse_args()
-    install_auc(path)
+    install_auc(args.path)
 
 
 if __name__ == '__main__':
