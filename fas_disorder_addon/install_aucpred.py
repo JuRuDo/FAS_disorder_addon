@@ -72,6 +72,20 @@ def add_path(path):
             file.write(path)
 
 
+def install_auc(path):
+    print('Cloning https://github.com/realbigws/Predict_Property.git...')
+    try:
+        Repo.clone_from('https://github.com/realbigws/Predict_Property.git', path.rstrip('/') +
+                        '/Predict_Property/', branch='master', progress=CloneProgress())
+    except:
+        raise Exception('Could not clone github repository.'
+                        '\nMake sure that you have a working internet connection and check if the install directory '
+                        'does not already have a Predict_Property installation.')
+    print('done!\ncompiling PredictProperty...')
+    compile_AUCpreD(path.rstrip('/') + '/Predict_Property/')
+    print('Finished installing PredictProperty.')
+
+
 def main():
     parser = argparse.ArgumentParser(epilog="Installs PredictProperty, the package containing AUCpreD.")
     required = parser.add_argument_group('required arguments')
@@ -81,17 +95,7 @@ def main():
     optional.add_argument("-c", "--check", default=None, type=str, required=False,
                           help="Check if existing installation of PredictProperty is working.")
     args = parser.parse_args()
-    print('Cloning https://github.com/realbigws/Predict_Property.git...')
-    try:
-        Repo.clone_from('https://github.com/realbigws/Predict_Property.git', args.path.rstrip('/') +
-                        '/Predict_Property/', branch='master', progress=CloneProgress())
-    except:
-        raise Exception('Could not clone github repository.'
-                        '\nMake sure that you have a working internet connection and check if the install directory '
-                        'does not already have a Predict_Property installation.')
-    print('done!\ncompiling PredictProperty...')
-    compile_AUCpreD(args.path.rstrip('/') + '/Predict_Property/')
-    print('Finished installing PredictProperty.')
+    install_auc(path)
 
 
 if __name__ == '__main__':

@@ -81,7 +81,7 @@ def remove_tmp(filepath):
 
 def make_tmp_fasta(header, seq, path):
     with open(path + '/' + header + '.fasta', 'w') as out:
-        out.write('>' + header + '\n' + seq)
+        out.write('>sequence\n' + seq)
 
 
 def run_anno(inpath, outpath, tmppath, cpus, aucpred):
